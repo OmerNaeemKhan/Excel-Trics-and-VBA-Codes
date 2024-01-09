@@ -1,0 +1,28 @@
+Sub CopySheet()
+
+Dim i As Long, LastRow As Long, ws As Worksheet
+
+Sheets("Sheet2").Activate
+
+LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+
+For i = 1 To LastRow
+
+    Sheets("Sheet1").Copy After:=Sheets(i)
+
+    ActiveSheet.Name = Sheets("Sheet2").Cells(i, 1)
+
+Next i
+
+End Sub
+
+**Copy sheets and rename sheets in a single click..sheet 1 reference and sheet2 should have names
+
+Steps1:
+name sheet 1 and second sheet 2 with the names of tab
+
+Step 2:
+goto Developer then VBA...insert Module.
+
+Step 3
+paste above code and sheets with new names will be generated automatically
